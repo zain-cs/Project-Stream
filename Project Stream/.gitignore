@@ -1,0 +1,14 @@
+# Configuration files with sensitive data
+includes/config.php
+includes/connect.php
+
+# User uploaded files
+members/*
+!members/.gitkeep
+posts/files/*
+!posts/files/.gitkeep
+
+# System files
+.DS_Store
+Thumbs.db
+*.log

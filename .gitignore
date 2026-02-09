@@ -1,0 +1,27 @@
+# Configuration files with sensitive data
+includes/config.php
+includes/connect.php
+
+# User uploaded files
+members/*
+!members/.gitkeep
+posts/files/*
+!posts/files/.gitkeep
+
+# Large files
+*.mp4
+*.avi
+*.mov
+*.mkv
+*.zip
+*.rar
+*.tar.gz
+
+# System files
+.DS_Store
+Thumbs.db
+*.log
+
+# IDE
+.vscode/
+.idea/

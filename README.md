@@ -11,7 +11,7 @@
 
 *5th Semester Web Programming Project - BS Computer Science*
 
-[Features](#features) • [Installation](#installation) • [Usage](#usage) • [Technologies](#technologies) • [Screenshots](#screenshots)
+[Features](#features) • [Installation](#installation) • [Usage](#usage) • [Technologies](#technologies-used) • [Project Structure](#project-structure)
 
 </div>
 
@@ -148,16 +148,17 @@ Follow these steps to set up Project Stream on your local machine:
 
 ```bash
 # Clone this repository
-git clone https://github.com/YOUR-USERNAME/project-stream.git
+git clone https://github.com/zain-cs/Project-Stream.git
 
 # Navigate to the project directory
-cd project-stream
+cd Project-Stream
 ```
 
 ### Step 2: Move to XAMPP Directory
 
+Copy the contents of the `Project Stream` folder (from inside this repo) into your XAMPP `htdocs` directory:
+
 ```bash
-# Copy the project to xampp/htdocs folder
 # Windows:
 C:\xampp\htdocs\project-stream
 
@@ -167,6 +168,8 @@ C:\xampp\htdocs\project-stream
 # macOS:
 /Applications/XAMPP/htdocs/project-stream
 ```
+
+> **Note:** The application code lives inside the `Project Stream/` folder in this repository, not at the repo root. Make sure you copy the contents of that folder (not the folder itself) into `htdocs`, so that `index.php` ends up directly inside `htdocs/project-stream/`.
 
 ### Step 3: Start XAMPP Services
 
@@ -196,7 +199,7 @@ project-stream/
 3. Name it: `project_stream` (or your preferred name)
 4. Set collation to: `utf8mb4_unicode_ci`
 5. Click **"Import"** tab
-6. Choose the file: `database/database.sql` from the project folder
+6. Choose the SQL file from the `Database/` folder in this repository
 7. Click **"Go"** to import
 
 ### Option 2: Using MySQL Command Line
@@ -211,8 +214,8 @@ CREATE DATABASE project_stream;
 # Use the database
 USE project_stream;
 
-# Import the SQL file
-SOURCE path/to/project-stream/database/database.sql;
+# Import the SQL file (path is relative to where you cloned the repo)
+SOURCE path/to/Project-Stream/Database/database.sql;
 
 # Exit
 exit;
@@ -247,40 +250,42 @@ The database includes three main tables:
 ## 📂 Project Structure
 
 ```
-project-stream/
+Project-Stream/                  # Repo root
 │
-├── database/
+├── Database/
 │   └── database.sql              # Database schema and structure
 │
-├── includes/
-│   ├── config.php                # Configuration settings (create from config-sample.php)
-│   ├── connect.php               # Database connection
-│   ├── header.php                # Common header
-│   ├── footer.php                # Common footer
-│   ├── chk-session.php          # Session validation
-│   ├── top-member.php           # Member navigation
-│   └── upload-picture.php       # Picture upload handler
+├── Project Stream/                # Application code (copy this into htdocs)
+│   ├── includes/
+│   │   ├── config.php             # Configuration settings (create from config-sample.php)
+│   │   ├── connect.php            # Database connection
+│   │   ├── header.php             # Common header
+│   │   ├── footer.php             # Common footer
+│   │   ├── chk-session.php        # Session validation
+│   │   ├── top-member.php         # Member navigation
+│   │   └── upload-picture.php     # Picture upload handler
+│   │
+│   ├── members/
+│   │   └── {username}/            # User-specific folders for profile pictures
+│   │
+│   ├── posts/
+│   │   └── files/                 # Uploaded documents storage
+│   │
+│   ├── images/
+│   │   ├── files-icons/           # File type icons
+│   │   └── Background-Screen1.jpg # UI backgrounds
+│   │
+│   ├── index.php                  # Login page
+│   ├── register.php               # Registration page
+│   ├── front.php                  # Main dashboard after login
+│   ├── dashboard.php              # User profile management
+│   ├── files.php                  # View all uploaded files
+│   ├── sign-out.php               # Logout handler
+│   └── signin.css                 # Authentication styling
 │
-├── members/
-│   └── {username}/              # User-specific folders for profile pictures
-│
-├── posts/
-│   └── files/                   # Uploaded documents storage
-│
-├── images/
-│   ├── files-icons/             # File type icons
-│   └── Background-Screen1.jpg   # UI backgrounds
-│
-├── index.php                    # Login page
-├── register.php                 # Registration page
-├── front.php                    # Main dashboard after login
-├── dashboard.php                # User profile management
-├── files.php                    # View all uploaded files
-├── sign-out.php                 # Logout handler
-├── signin.css                   # Authentication styling
-│
-├── .gitignore                   # Git ignore rules
-└── README.md                    # This file
+├── .gitignore                     # Git ignore rules
+├── LICENSE                        # MIT license
+└── README.md                      # This file
 ```
 
 ---
@@ -411,7 +416,7 @@ This is an academic project, but contributions and suggestions are welcome!
 
 1. **Fork the Repository**
    ```bash
-   git clone https://github.com/YOUR-USERNAME/project-stream.git
+   git clone https://github.com/zain-cs/Project-Stream.git
    ```
 
 2. **Create a Feature Branch**
@@ -442,16 +447,15 @@ This is an academic project, but contributions and suggestions are welcome!
 ## 👨‍💻 Author
 
 **Muhammad Zain-ul-Abidin**
-- **Registration Number**: 2023-ag-8037
 - **Program**: BS Computer Science (BSCS)
 - **Semester**: 5th Morning Section
 - **Session**: 2025-2026
 - **Institution**: University of Agriculture, PARS Campus, Faisalabad
 
 ### Connect with Me
-- GitHub: [@YOUR-GITHUB-USERNAME](https://github.com/YOUR-GITHUB-USERNAME)
-- LinkedIn: [Your LinkedIn Profile](https://linkedin.com/in/your-profile)
-- Email: your.email@example.com
+- GitHub: [@zain-cs](https://github.com/zain-cs)
+- LinkedIn: [Muhammad Zain](https://www.linkedin.com/in/muhammad-zain-cs/)
+- Email: mzainulabidin.cs@gmail.com
 
 ---
 
@@ -543,6 +547,6 @@ If you encounter any issues or have questions:
 
 ---
 
-**Last Updated**: February 2026  
+**Last Updated**: June 2026  
 **Version**: 1.0.0  
 **Status**: Active Development
